@@ -1,0 +1,282 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000070c5cac7, pid=3724, tid=2732
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b14) (build 1.8.0_45-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x14cac7]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000160c8800):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2732, stack(0x0000000016890000,0x0000000016990000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000000160c8800, RCX=0x00000000160c8800, RDX=0x00000000eba46770
+RSP=0x000000001698dd40, RBP=0x000000001698de38, RSI=0x000000001698df70, RDI=0x00000000160c89f8
+R8 =0x0000000000000000, R9 =0x000000000000000e, R10=0x0000000000000000, R11=0x0000000000000200
+R12=0x0000000016e0f820, R13=0x0000000014276a00, R14=0x000000001698df70, R15=0x00000000160c8800
+RIP=0x0000000070c5cac7, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x000000001698dd40)
+0x000000001698dd40:   0000000000000000 0000000014279278
+0x000000001698dd50:   00000000160c8800 0000000070c6c2e0
+0x000000001698dd60:   0000000016e4bf60 0000000100119ba0
+0x000000001698dd70:   000000006b12b005 0000000001dd9a60
+0x000000001698dd80:   000000006b12b005 000000000000000e
+0x000000001698dd90:   000000000013462e 00000000160c8800
+0x000000001698dda0:   000000001607cba8 000000000000063e
+0x000000001698ddb0:   00000000711095a0 0000000070c6c45f
+0x000000001698ddc0:   00000000160c8800 00000000b0459219
+0x000000001698ddd0:   00000000144480a0 000000006b12b005
+0x000000001698dde0:   00000000160c8800 0000000016e0f820
+0x000000001698ddf0:   00000000160c8800 000000000000000e
+0x000000001698de00:   000000001698df70 0000000015ea2ef0
+0x000000001698de10:   00000000160c89f8 000000006b0c149c
+0x000000001698de20:   00000000160c89f8 0000000015ea2ef0
+0x000000001698de30:   0000000000000000 000000000000000e 
+
+Instructions: (pc=0x0000000070c5cac7)
+0x0000000070c5caa7:   4c 24 58 e8 91 ad 12 00 48 8b 84 24 f0 00 00 00
+0x0000000070c5cab7:   c7 44 24 48 0e 00 00 00 48 8d ac 24 f8 00 00 00
+0x0000000070c5cac7:   48 8b 08 48 89 6c 24 40 48 8b 51 08 48 8d 4c 24
+0x0000000070c5cad7:   78 0f b7 42 22 48 8b 52 08 48 8b 54 c2 50 e8 06 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000000160c8800 is a thread
+RCX=0x00000000160c8800 is a thread
+RDX=0x00000000eba46770 is an oop
+java.lang.NoSuchMethodError 
+ - klass: 'java/lang/NoSuchMethodError'
+RSP=0x000000001698dd40 is pointing into the stack for thread: 0x00000000160c8800
+RBP=0x000000001698de38 is pointing into the stack for thread: 0x00000000160c8800
+RSI=0x000000001698df70 is pointing into the stack for thread: 0x00000000160c8800
+RDI=0x00000000160c89f8 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x000000000000000e is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000200 is an unknown value
+R12=0x0000000016e0f820 is an unknown value
+R13=0x0000000014276a00 is pointing into metadata
+R14=0x000000001698df70 is pointing into the stack for thread: 0x00000000160c8800
+R15=0x00000000160c8800 is a thread
+
+
+Stack: [0x0000000016890000,0x0000000016990000],  sp=0x000000001698dd40,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x14cac7]
+C  [sqlitejdbc.dll+0x149c]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.sqlite.NativeDB._open(Ljava/lang/String;)V+0
+j  org.sqlite.DB.open(Lorg/sqlite/Conn;Ljava/lang/String;)V+7
+j  org.sqlite.Conn.<init>(Ljava/lang/String;Ljava/lang/String;)V+289
+j  org.sqlite.JDBC.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+43
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/Class;)Ljava/sql/Connection;+171
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;)Ljava/sql/Connection;+13
+j  DbConnection.dbConnector()Ljava/sql/Connection;+8
+j  Login_page.<init>()V+18
+j  Login_page$1.run()V+4
+j  java.awt.event.InvocationEvent.dispatch()V+47
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+21
+j  java.awt.EventQueue.access$500(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+32
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000016e45000 JavaThread "Thread-1" [_thread_blocked, id=4320, stack(0x00000000176a0000,0x00000000177a0000)]
+  0x0000000016dfb000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=2724, stack(0x00000000175a0000,0x00000000176a0000)]
+  0x0000000001d90800 JavaThread "DestroyJavaVM" [_thread_blocked, id=692, stack(0x0000000001c60000,0x0000000001d60000)]
+=>0x00000000160c8800 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2732, stack(0x0000000016890000,0x0000000016990000)]
+  0x0000000016070000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3096, stack(0x00000000165d0000,0x00000000166d0000)]
+  0x000000001606d000 JavaThread "AWT-Shutdown" [_thread_blocked, id=668, stack(0x00000000164d0000,0x00000000165d0000)]
+  0x000000001606c800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3700, stack(0x00000000163d0000,0x00000000164d0000)]
+  0x0000000015d18800 JavaThread "Service Thread" daemon [_thread_blocked, id=1148, stack(0x00000000160e0000,0x00000000161e0000)]
+  0x0000000014487000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=2364, stack(0x0000000015be0000,0x0000000015ce0000)]
+  0x0000000014480800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=4236, stack(0x0000000015ae0000,0x0000000015be0000)]
+  0x0000000014479000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3840, stack(0x00000000159e0000,0x0000000015ae0000)]
+  0x0000000014477800 JavaThread "Attach Listener" daemon [_thread_blocked, id=4260, stack(0x00000000158e0000,0x00000000159e0000)]
+  0x0000000014476000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2160, stack(0x00000000157e0000,0x00000000158e0000)]
+  0x0000000001e86000 JavaThread "Finalizer" daemon [_thread_blocked, id=5044, stack(0x00000000156e0000,0x00000000157e0000)]
+  0x0000000014449800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4936, stack(0x00000000155e0000,0x00000000156e0000)]
+
+Other Threads:
+  0x0000000014447800 VMThread [stack: 0x00000000154e0000,0x00000000155e0000] [id=2096]
+  0x0000000014496800 WatcherThread [stack: 0x00000000161e0000,0x00000000162e0000] [id=2944]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 6562K [0x00000000eb400000, 0x00000000ec900000, 0x0000000100000000)
+  eden space 16384K, 40% used [0x00000000eb400000,0x00000000eba68860,0x00000000ec400000)
+  from space 2560K, 0% used [0x00000000ec680000,0x00000000ec680000,0x00000000ec900000)
+  to   space 2560K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ec680000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1c00000, 0x00000000c4700000, 0x00000000eb400000)
+  object space 44032K, 0% used [0x00000000c1c00000,0x00000000c1c00000,0x00000000c4700000)
+ Metaspace       used 9268K, capacity 9394K, committed 9728K, reserved 1058816K
+  class space    used 1113K, capacity 1192K, committed 1280K, reserved 1048576K
+
+Card table byte_map: [0x0000000011250000,0x0000000011450000] byte_map_base: 0x0000000010c42000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000071314040
+ Begin Bits: [0x00000000119a0000, 0x0000000012930000)
+ End Bits:   [0x0000000012930000, 0x00000000138c0000)
+
+Polling page: 0x0000000001c30000
+
+CodeCache: size=245760Kb used=1910Kb max_used=1926Kb free=243849Kb
+ bounds [0x0000000001e90000, 0x0000000002100000, 0x0000000010e90000]
+ total_blobs=789 nmethods=389 adapters=313
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.503 Thread 0x0000000014479000 nmethod 384% 0x0000000002069a90 code [0x0000000002069c80, 0x000000000206aa00]
+Event: 0.503 Thread 0x0000000014480800  385       4       java.security.DigestInputStream::read (31 bytes)
+Event: 0.503 Thread 0x0000000014479000  386       4       java.security.MessageDigest::update (11 bytes)
+Event: 0.511 Thread 0x0000000014479000 nmethod 386 0x0000000002062210 code [0x0000000002062380, 0x00000000020627e8]
+Event: 0.511 Thread 0x0000000014479000  387   !   4       org.xerial.db.sql.sqlite.SQLiteJDBCLoader::md5sum (73 bytes)
+Event: 0.516 Thread 0x0000000014480800 nmethod 385 0x000000000206db10 code [0x000000000206dca0, 0x000000000206e618]
+Event: 0.516 Thread 0x0000000014487000  388       1       sun.util.calendar.CalendarDate::isNormalized (5 bytes)
+Event: 0.516 Thread 0x0000000014487000 nmethod 388 0x0000000002061f50 code [0x00000000020620a0, 0x00000000020621b0]
+Event: 0.516 Thread 0x0000000014487000  389       1       java.net.URL::getQuery (5 bytes)
+Event: 0.517 Thread 0x0000000014487000 nmethod 389 0x00000000020697d0 code [0x0000000002069920, 0x0000000002069a30]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (4 events):
+Event: 0.260 Thread 0x00000000160c8800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x0000000002005eb8 method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 0.480 Thread 0x00000000160c8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002063ccc method=java.security.DigestInputStream.read()I @ 17
+Event: 0.480 Thread 0x00000000160c8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000205a2dc method=org.xerial.db.sql.sqlite.SQLiteJDBCLoader.md5sum(Ljava/io/InputStream;)Ljava/lang/String; @ 29
+Event: 0.481 Thread 0x00000000160c8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000205d0a0 method=sun.security.provider.DigestBase.engineUpdate(B)V @ 4
+
+Internal exceptions (10 events):
+Event: 0.110 Thread 0x0000000001d90800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb4d44e8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.110 Thread 0x0000000001d90800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb4d8280) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.110 Thread 0x0000000001d90800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb4d8438) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.115 Thread 0x0000000001d90800 Exception <a 'java/io/FileNotFoundException'> (0x00000000eb4da9f0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 0.189 Thread 0x0000000001d90800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000eb613580) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+Event: 0.192 Thread 0x0000000001d90800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000eb621fc0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+Event: 0.238 Thread 0x00000000160c8800 Exception <a 'java/io/FileNotFoundException'> (0x00000000eb742e70) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 0.260 Thread 0x00000000160c8800 Implicit null exception at 0x0000000002005ce2 to 0x0000000002005ea9
+Event: 0.481 Thread 0x00000000160c8800 Implicit null exception at 0x000000000205cdca to 0x000000000205d08d
+Event: 0.517 Thread 0x00000000160c8800 Exception <a 'java/lang/NoSuchMethodError': throwex> (0x00000000eba46770) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3457\hotspot\src\share\vm\prims\jni.cpp, line 1598]
+
+Events (10 events):
+Event: 0.480 Thread 0x00000000160c8800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000000000205a2dc
+Event: 0.480 Thread 0x00000000160c8800 DEOPT PACKING pc=0x000000000205a2dc sp=0x000000001698d5c0
+Event: 0.480 Thread 0x00000000160c8800 DEOPT UNPACKING pc=0x0000000001ed582a sp=0x000000001698d568 mode 2
+Event: 0.481 Thread 0x00000000160c8800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000000000205d0a0
+Event: 0.481 Thread 0x00000000160c8800 DEOPT PACKING pc=0x000000000205d0a0 sp=0x000000001698d4f0
+Event: 0.481 Thread 0x00000000160c8800 DEOPT UNPACKING pc=0x0000000001ed582a sp=0x000000001698d458 mode 2
+Event: 0.503 Thread 0x00000000160c8800 DEOPT PACKING pc=0x0000000002066ea6 sp=0x000000001698d550
+Event: 0.503 Thread 0x00000000160c8800 DEOPT UNPACKING pc=0x0000000001ed787f sp=0x000000001698d2d8 mode 0
+Event: 0.516 loading class org/sqlite/Function$Aggregate
+Event: 0.516 loading class org/sqlite/Function$Aggregate done
+
+
+Dynamic libraries:
+0x00007ff622a60000 - 0x00007ff622a97000 	C:\Program Files\Java\jdk1.8.0_45\bin\javaw.exe
+0x00007ffc01450000 - 0x00007ffc015f9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffbff980000 - 0x00007ffbffab9000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffbfe950000 - 0x00007ffbfea5e000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffbfd400000 - 0x00007ffbfd48b000 	C:\Windows\system32\apphelp.dll
+0x00007ffbfbdf0000 - 0x00007ffbfbe3f000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffc013a0000 - 0x00007ffc01447000 	C:\Windows\system32\msvcrt.dll
+0x00007ffbfe680000 - 0x00007ffbfe6ab000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffbff880000 - 0x00007ffbff8d1000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ffbff700000 - 0x00007ffbff871000 	C:\Windows\system32\USER32.dll
+0x00007ffbfece0000 - 0x00007ffbfee56000 	C:\Windows\system32\ole32.dll
+0x00007ffbffe60000 - 0x00007ffc01270000 	C:\Windows\system32\SHELL32.dll
+0x00007ffbfde60000 - 0x00007ffbfde7f000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ffbffc00000 - 0x00007ffbffca5000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffbf7040000 - 0x00007ffbf705b000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007ffbff0c0000 - 0x00007ffbff1f6000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffbff200000 - 0x00007ffbff257000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ffbff500000 - 0x00007ffbff6d7000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ffbfee60000 - 0x00007ffbfefa5000 	C:\Windows\system32\GDI32.dll
+0x00007ffbfe7d0000 - 0x00007ffbfe7e4000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffbfa6c0000 - 0x00007ffbfa761000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ffbfefc0000 - 0x00007ffbfeff4000 	C:\Windows\system32\IMM32.DLL
+0x00007ffbffac0000 - 0x00007ffbffbf8000 	C:\Windows\system32\MSCTF.dll
+0x00007ffbfa1a0000 - 0x00007ffbfa3fa000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.16384_none_62475f7becb72503\COMCTL32.dll
+0x0000000070960000 - 0x0000000070a32000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x0000000070b10000 - 0x0000000071393000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\server\jvm.dll
+0x00007ffbfa5d0000 - 0x00007ffbfa5d9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffbf44f0000 - 0x00007ffbf450f000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffbf6840000 - 0x00007ffbf684a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffbff6f0000 - 0x00007ffbff6f7000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffbff4a0000 - 0x00007ffbff4f8000 	C:\Windows\system32\WS2_32.dll
+0x00007ffbf4430000 - 0x00007ffbf445a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffbffe50000 - 0x00007ffbffe59000 	C:\Windows\system32\NSI.dll
+0x00007ffbfec90000 - 0x00007ffbfecda000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ffbfd650000 - 0x00007ffbfd676000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x0000000070b00000 - 0x0000000070b0f000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x0000000070ad0000 - 0x0000000070af9000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\java.dll
+0x0000000070ab0000 - 0x0000000070ac6000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x00000000707c0000 - 0x0000000070958000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\awt.dll
+0x00007ffbff000000 - 0x00007ffbff0b7000 	C:\Windows\system32\OLEAUT32.dll
+0x00007ffbfd4d0000 - 0x00007ffbfd5f2000 	C:\Windows\system32\uxtheme.dll
+0x00007ffbfa4c0000 - 0x00007ffbfa4e1000 	C:\Windows\system32\dwmapi.dll
+0x00007ffbfd6a0000 - 0x00007ffbfd6aa000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffbfe710000 - 0x00007ffbfe71a000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffbfe6b0000 - 0x00007ffbfe70e000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x0000000070780000 - 0x00000000707b1000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\jpeg.dll
+0x000000006b0c0000 - 0x000000006b13c000 	C:\Users\Reema Narang\AppData\Local\Temp\sqlitejdbc.dll
+0x00007ffbef240000 - 0x00007ffbef3c8000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: Login_page
+java_class_path (initial): C:\Users\Reema Narang\workspace\ClinicProject\bin;C:\Users\Reema Narang\workspace\ClinicProject\Resource\sqlite-jdbc-3.5.8.jar;C:\Users\Reema Narang\workspace\ClinicProject\forms-1.3.0.jar;C:\Users\Reema Narang\workspace\ClinicProject\miglayout15-swing.jar;C:\Users\Reema Narang\workspace\ClinicProject\Resource\anelab-thread-java.jar;C:\Users\Reema Narang\workspace\ClinicProject\Resource\org.eclipse.jetty.util.jar;C:\Users\Reema Narang\workspace\ClinicProject\Resource\sqlite-jdbc-3.6.20.1.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.
+PATH=C:/Program Files/Java/jdk1.8.0_45/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_45/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_45/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_45\bin;C:\Windows\System32;E:\Software\Eclipse 64-bit\eclipse;
+USERNAME=Reema
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.16441)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 4075160k(2431240k free), swap 4796056k(2608468k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for windows-amd64 JRE (1.8.0_45-b14), built on Apr 10 2015 10:34:15 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Apr 23 22:52:23 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
